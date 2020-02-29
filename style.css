@@ -1,3 +1,16 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translate(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes fade {
   0% {
     opacity: 0;
@@ -7,10 +20,30 @@
   }
 }
 
+@font-face {
+  font-family: "gangster grotesk R";
+  src: url(gangstergrotesk-regular.otf);
+}
+
+@font-face {
+  font-family: "gangster grotesk B";
+  src: url(gangstergrotesk-bold.otf);
+}
+
+.appear {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
 body {
   background-color: #fff;
   overflow-x: hidden;
   margin: 0;
+  overscroll-behavior-y: none;
+  font-family: "gangster grotesk B";
 }
 
 nav {
@@ -23,14 +56,15 @@ nav {
   flex-direction: column;
   justify-content: center;
   z-index: 0;
-  background-color: #196d6a;
+  background-color: #f9f622;
 }
 
 nav a {
   color: #000;
   text-decoration: none;
   margin: 10px 0 10px 40px;
-  font-size: 24px;
+
+  font-size: 48px;
 }
 
 main {
@@ -39,6 +73,7 @@ main {
   background-color: #fff;
   min-height: 100vh;
   transition: background-color 1s, transform 0.5s;
+  box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .open {
@@ -54,10 +89,12 @@ a.nav-button {
   text-decoration: none;
   color: #000;
   vertical-align: middle;
+  font-size: 18px;
 }
 a.nav-button img {
-  width: 40px;
+  width: 25px;
   vertical-align: middle;
+  padding-right: 10px;
 }
 
 .main {
@@ -78,19 +115,26 @@ a.nav-button img {
 h1 {
   font-size: 48px;
   margin: 0;
+  width: 450px;
 }
 
 p {
-  font-size: 24px;
-  margin: 20px 0 20px 0;
+  font-family: "gangster grotesk R";
+  font-size: 18px;
+  margin: 0 0 20px 0;
 }
 
 a.button {
-  font-size: 24px;
+  font-size: 18px;
   text-decoration: none;
   padding: 10px 20px 10px 20px;
-  border: 3px solid #000;
+  border: 1px solid #000;
   display: inline-block;
+  border-radius: 5px;
+  color: black;
+  background-color: #f9f622;
+  font-family: "gangster grotesk R";
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
 }
 div.photos {
   position: relative;
@@ -103,6 +147,7 @@ div.photos img {
   top: 50px;
   left: 0;
   transition: transform 0.5s, box-shadow 0.5s;
+  border-radius: 5px;
 }
 
 div.photos img:first-child {
@@ -113,16 +158,19 @@ div.photos:hover img {
 }
 
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+
+  background-color: black;
+  color: white;
 }
 
 footer p {
-  font-size: 14px;
+  font-size: 12px;
   margin: 5px 0 5px 0;
 }
 
@@ -133,11 +181,15 @@ div.photo-gallery {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 div.photo-gallery img {
+  display: block;
   width: 900px;
   padding: 100px 0 100px 0;
+  border: 1 solid #fff;
+  border-radius: 5px;
 }
 
 div.progress {
@@ -148,10 +200,10 @@ div.progress {
 }
 
 div.progress div.bar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
+  height: 5px;
   width: 0;
-  background-color: #7ed5bf;
+  background-color: #f9f622;
 }

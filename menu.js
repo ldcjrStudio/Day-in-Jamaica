@@ -7,8 +7,8 @@ navTag.addEventListener("click", function() {
   mainTag.classList.toggle("open");
 
   if (mainTag.classList.contains("open")) {
-    navTag.innerHTML = `<img src="nav-x.svg"> Close`;
+    navTag.innerHTML = `<img src="close.svg"> Close`;
   } else {
-    navTag.innerHTML = `<img src="nav.svg"> Menu`;
+    navTag.innerHTML = `<img src="Menu.svg"> Menu`;
   }
 });
