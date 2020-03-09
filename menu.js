@@ -4,6 +4,7 @@ const navTag = document.querySelector("a.nav-button");
 const mainTag = document.querySelector("main");
 
 navTag.addEventListener("click", function() {
+  event.preventDefault();
   mainTag.classList.toggle("open");
 
   if (mainTag.classList.contains("open")) {

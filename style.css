@@ -187,8 +187,7 @@ div.photo-gallery {
 div.photo-gallery img {
   display: block;
   width: 900px;
-  padding: 100px 0 100px 0;
-  border: 1 solid #fff;
+  margin: 100px 0 100px 0;
   border-radius: 5px;
 }
 

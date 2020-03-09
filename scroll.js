@@ -2,6 +2,7 @@ const main = document.querySelector("main");
 
 document.addEventListener("scroll", function() {
   const pixels = window.pageYOffset;
+  event.preventDefault();
 
   if (pixels < 700) {
     main.style.backgroundColor = "#fff";
